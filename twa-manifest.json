@@ -1,0 +1,42 @@
+{
+  "packageId": "dev.daily",
+  "host": "app.daily.dev",
+  "name": "daily.dev",
+  "launcherName": "daily.dev",
+  "display": "standalone",
+  "themeColor": "#151618",
+  "navigationColor": "#000000",
+  "navigationColorDark": "#000000",
+  "navigationDividerColor": "#000000",
+  "navigationDividerColorDark": "#000000",
+  "backgroundColor": "#151618",
+  "enableNotifications": true,
+  "startUrl": "/?android=true",
+  "iconUrl": "https://app.daily.dev/android-chrome-512x512.png",
+  "maskableIconUrl": "https://app.daily.dev/maskable_icon.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "/Users/shamun/Projects/daily/android/android.keystore",
+    "alias": "android"
+  },
+  "appVersionName": "1",
+  "appVersionCode": 1,
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://app.daily.dev/manifest.json",
+  "fallbackType": "customtabs",
+  "features": {},
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "orientation": "portrait",
+  "fingerprints": [
+    {
+      "value": "DD:F0:70:20:89:BB:2A:A6:E0:57:9E:02:E2:58:44:12:78:B6:E7:4C:DA:0E:E0:26:C1:0B:41:3A:FE:B4:FA:FF"
+    }
+  ],
+  "additionalTrustedOrigins": [],
+  "appVersion": "1"
+}
