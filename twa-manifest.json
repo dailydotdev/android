@@ -5,6 +5,7 @@
   "launcherName": "daily.dev",
   "display": "standalone",
   "themeColor": "#151618",
+  "themeColorDark": "#000000",
   "navigationColor": "#000000",
   "navigationColorDark": "#000000",
   "navigationDividerColor": "#000000",
@@ -14,13 +15,13 @@
   "startUrl": "/?android=true",
   "iconUrl": "https://app.daily.dev/android-chrome-512x512.png",
   "maskableIconUrl": "https://app.daily.dev/maskable_icon.png",
-  "splashScreenFadeOutDuration": 300,
+  "splashScreenFadeOutDuration": 100,
   "signingKey": {
     "path": "/Users/shamun/Projects/daily/android/android.keystore",
     "alias": "android"
   },
-  "appVersionName": "1",
-  "appVersionCode": 1,
+  "appVersionName": "2",
+  "appVersionCode": 2,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://app.daily.dev/manifest.json",
@@ -31,6 +32,8 @@
   },
   "enableSiteSettingsShortcut": true,
   "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "minSdkVersion": 19,
   "orientation": "portrait",
   "fingerprints": [
     {
@@ -38,5 +41,6 @@
     }
   ],
   "additionalTrustedOrigins": [],
-  "appVersion": "1"
+  "retainedBundles": [],
+  "appVersion": "2"
 }
