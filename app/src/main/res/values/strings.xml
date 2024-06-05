@@ -15,7 +15,8 @@
      limitations under the License.
 -->
 <resources>
-  
+    <string name="facebook_app_id">801381784229955</string>
+    <string name="facebook_client_token">0640095898023ca25d38dbf7c775c9d8</string>
 
   <!--
     This variable below expresses the relationship between the app and the site,
@@ -31,6 +32,6 @@
             \"site\": \"https://app.daily.dev\"
         }
     }]
-    
-  </string>  
+
+  </string>
 </resources>

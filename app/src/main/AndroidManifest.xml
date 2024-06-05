@@ -37,6 +37,9 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Translucent.NoTitleBar">
 
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
+
         <meta-data
             android:name="asset_statements"
             android:resource="@string/assetStatements" />
