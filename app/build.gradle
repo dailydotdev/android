@@ -56,8 +56,8 @@ android {
         applicationId "dev.daily"
         minSdkVersion 19
         targetSdkVersion 33
-        versionCode 2
-        versionName "2"
+        versionCode 7
+        versionName "7"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
@@ -202,4 +202,5 @@ dependencies {
 
         implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.5.0'
     implementation 'com.facebook.android:facebook-android-sdk:latest.release'
+
 }
