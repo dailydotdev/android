@@ -43,3 +43,8 @@ In case the PWA manifest was updated, you can use Bubblewrap to fetch the new ma
 bubblewrap merge
 bubblewrap update
 ```
+
+### Facebook SDK
+
+Make sure to follow this guide whenever you generate the project again.
+https://developers.facebook.com/docs/android/getting-started
