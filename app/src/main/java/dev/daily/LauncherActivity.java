@@ -19,18 +19,24 @@ import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 
 public class LauncherActivity
         extends com.google.androidbrowserhelper.trusted.LauncherActivity {
-    
 
-    
+    private String mAppInstanceId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // `super.onCreate()` may have called `finish()`. In this case, we don't do any work.
+        if (isFinishing()) {
+            return;
+        }
+
         // Setting an orientation crashes the app due to the transparent background on Android 8.0
         // Oreo and below. We only set the orientation on Oreo and above. This only affects the
         // splash screen and Chrome will still respect the orientation.
@@ -40,6 +46,23 @@ public class LauncherActivity
         } else {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
         }
+
+        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
+        // Start the asynchronous task to get the Firebase application instance id.
+        firebaseAnalytics.getAppInstanceId().addOnCompleteListener(task -> {
+            // Once the task is complete, save the instance id so it can be used by
+            // getLaunchingUrl().
+            mAppInstanceId = task.getResult();
+            launchTwa();
+        });
+    }
+
+    @Override
+    protected boolean shouldLaunchImmediately() {
+        // launchImmediately() returns `false` so we can wait until Firebase Analytics is ready
+        // and then launch the Trusted Web Activity with `launch()`.
+        return false;
     }
 
     @Override
@@ -47,8 +70,8 @@ public class LauncherActivity
         // Get the original launch Url.
         Uri uri = super.getLaunchingUrl();
 
-        
-
-        return uri;
+        return uri.buildUpon()
+                .appendQueryParameter("aiid", mAppInstanceId)
+                .build();
     }
 }
