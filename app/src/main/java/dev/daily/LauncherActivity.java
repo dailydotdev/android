@@ -48,7 +48,7 @@ public class LauncherActivity
         }
 
         FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(this);
-
+        firebaseAnalytics.logEvent("boot", new Bundle());
         // Start the asynchronous task to get the Firebase application instance id.
         firebaseAnalytics.getAppInstanceId().addOnCompleteListener(task -> {
             // Once the task is complete, save the instance id so it can be used by
