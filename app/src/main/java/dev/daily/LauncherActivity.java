@@ -19,14 +19,23 @@ import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+import com.facebook.applinks.AppLinkData;
+import com.google.android.gms.ads.identifier.AdvertisingIdClient;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.firebase.analytics.FirebaseAnalytics;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class LauncherActivity
         extends com.google.androidbrowserhelper.trusted.LauncherActivity {
 
-    private String mAppInstanceId;
-
+    private ArrayList<String[]> mQueryParams = new ArrayList<>();
 
 
     @Override
@@ -48,13 +57,24 @@ public class LauncherActivity
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
         }
 
+        String fbAnonymousId = AppEventsLogger.getAnonymousAppDeviceGUID(getApplicationContext());
+        mQueryParams.add(new String[]{"fb_anon_id", fbAnonymousId});
+
         FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(this);
         firebaseAnalytics.logEvent("boot", new Bundle());
-        // Start the asynchronous task to get the Firebase application instance id.
+
         firebaseAnalytics.getAppInstanceId().addOnCompleteListener(task -> {
-            // Once the task is complete, save the instance id so it can be used by
-            // getLaunchingUrl().
-            mAppInstanceId = task.getResult();
+            mQueryParams.add(new String[]{"aiid", task.getResult()});
+            AppLinkData appLinkData = AppLinkData.createFromActivity(this);
+            if (appLinkData != null) {
+                Uri targetUri = appLinkData.getTargetUri();
+                if (targetUri != null) {
+                    String fbclid = targetUri.getQueryParameter("fbclid");
+                    if (fbclid != null) {
+                        mQueryParams.add(new String[]{"fbclid", fbclid});
+                    }
+                }
+            }
             launchTwa();
         });
     }
@@ -69,10 +89,13 @@ public class LauncherActivity
     @Override
     protected Uri getLaunchingUrl() {
         // Get the original launch Url.
-        Uri uri = super.getLaunchingUrl();
+        Uri baseUri = super.getLaunchingUrl();
 
-        return uri.buildUpon()
-                .appendQueryParameter("aiid", mAppInstanceId)
-                .build();
+        Uri.Builder uriBuilder = baseUri.buildUpon();
+        for (String[] queryParam : mQueryParams) {
+            uriBuilder.appendQueryParameter(queryParam[0], queryParam[1]);
+        }
+
+        return uriBuilder.build();
     }
 }
