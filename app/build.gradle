@@ -59,8 +59,8 @@ android {
         applicationId "dev.daily"
         minSdkVersion 19
         targetSdkVersion 35
-        versionCode 18
-        versionName "18"
+        versionCode 19
+        versionName "19"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
