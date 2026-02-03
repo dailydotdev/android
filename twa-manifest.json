@@ -20,8 +20,8 @@
     "path": "/Users/shamun/Projects/daily/android/android.keystore",
     "alias": "android"
   },
-  "appVersionName": "17",
-  "appVersionCode": 18,
+  "appVersionName": "20",
+  "appVersionCode": 20,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://app.daily.dev/manifest.json",
@@ -42,5 +42,5 @@
   ],
   "additionalTrustedOrigins": [],
   "retainedBundles": [],
-  "appVersion": "17"
+  "appVersion": "20"
 }
