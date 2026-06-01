@@ -31,6 +31,13 @@
             \"namespace\": \"web\",
             \"site\": \"https://app.daily.dev\"
         }
+    },
+    {
+        \"relation\": [\"delegate_permission/common.handle_all_urls\"],
+        \"target\": {
+            \"namespace\": \"web\",
+            \"site\": \"https://daily.dev\"
+        }
     }]
 
   </string>
