@@ -149,7 +149,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <data android:scheme="https"
-                    android:host="daily.dev"/>
+                    android:host="app.daily.dev"/>
             </intent-filter>
 
         </activity>
@@ -186,7 +186,7 @@
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <data
                         android:scheme="https"
-                        android:host="app.daily.dev"/>
+                        android:host="@string/hostName"/>
             </intent-filter>
         </service>
 

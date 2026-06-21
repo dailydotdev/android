@@ -1,6 +1,6 @@
 {
   "packageId": "dev.daily",
-  "host": "app.daily.dev",
+  "host": "daily.dev",
   "name": "daily.dev",
   "launcherName": "daily.dev",
   "display": "standalone",
@@ -13,18 +13,18 @@
   "backgroundColor": "#151618",
   "enableNotifications": true,
   "startUrl": "/?android=true",
-  "iconUrl": "https://app.daily.dev/android-chrome-512x512.png",
-  "maskableIconUrl": "https://app.daily.dev/maskable_icon.png",
+  "iconUrl": "https://daily.dev/android-chrome-512x512.png",
+  "maskableIconUrl": "https://daily.dev/maskable_icon.png",
   "splashScreenFadeOutDuration": 100,
   "signingKey": {
     "path": "/Users/shamun/Projects/daily/android/android.keystore",
     "alias": "android"
   },
-  "appVersionName": "20",
-  "appVersionCode": 20,
+  "appVersionName": "21",
+  "appVersionCode": 21,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
-  "webManifestUrl": "https://app.daily.dev/manifest.json",
+  "webManifestUrl": "https://daily.dev/manifest.json",
   "fallbackType": "customtabs",
   "features": {},
   "alphaDependencies": {
@@ -41,8 +41,8 @@
     }
   ],
   "additionalTrustedOrigins": [
-    "https://daily.dev"
+    "https://app.daily.dev"
   ],
   "retainedBundles": [],
-  "appVersion": "20"
+  "appVersion": "21"
 }

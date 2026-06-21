@@ -24,7 +24,7 @@ plugins {
 
 def twaManifest = [
     applicationId: 'dev.daily',
-    hostName: 'app.daily.dev', // The domain being opened in the TWA.
+    hostName: 'daily.dev', // The domain being opened in the TWA.
     launchUrl: '/?android=true', // The start path for the TWA. Must be relative to the domain.
     name: 'daily.dev', // The application name.
     launcherName: 'daily.dev', // The name shown on the Android Launcher.
@@ -59,8 +59,8 @@ android {
         applicationId "dev.daily"
         minSdkVersion 19
         targetSdkVersion 35
-        versionCode 20
-        versionName "20"
+        versionCode 21
+        versionName "21"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
@@ -76,7 +76,7 @@ android {
             // The URL the Web Manifest for the Progressive Web App that the TWA points to. This
             // is used by Chrome OS and Meta Quest to open the Web version of the PWA instead of
             // the TWA, as it will probably give a better user experience for non-mobile devices.
-            resValue "string", "webManifestUrl", 'https://app.daily.dev/manifest.json'
+            resValue "string", "webManifestUrl", 'https://daily.dev/manifest.json'
 
 
 

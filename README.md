@@ -4,7 +4,7 @@
 <br>
 
 A [bubblewrap](https://github.com/GoogleChromeLabs/bubblewrap/tree/main/packages/cli) generated Android project.
-The app uses Trusted Web Activity (TWA) to publish our [Progressive Web App (PWA)](https://app.daily.dev/) to the Play Store.
+The app uses Trusted Web Activity (TWA) to publish our [Progressive Web App (PWA)](https://daily.dev/) to the Play Store.
 
 Here's a guide if you want to learn more:
 https://developer.chrome.com/docs/android/trusted-web-activity/quick-start/

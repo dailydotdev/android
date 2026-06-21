@@ -29,14 +29,14 @@
         \"relation\": [\"delegate_permission/common.handle_all_urls\"],
         \"target\": {
             \"namespace\": \"web\",
-            \"site\": \"https://app.daily.dev\"
+            \"site\": \"https://daily.dev\"
         }
     },
     {
         \"relation\": [\"delegate_permission/common.handle_all_urls\"],
         \"target\": {
             \"namespace\": \"web\",
-            \"site\": \"https://daily.dev\"
+            \"site\": \"https://app.daily.dev\"
         }
     }]
 
