@@ -49,7 +49,7 @@ def twaManifest = [
     // 'customtabs' and 'webview'.
     fallbackType: 'customtabs',
     enableSiteSettingsShortcut: 'true',
-    orientation: 'portrait',
+    orientation: 'any',
 ]
 
 android {
@@ -59,8 +59,8 @@ android {
         applicationId "dev.daily"
         minSdkVersion 19
         targetSdkVersion 35
-        versionCode 22
-        versionName "22"
+        versionCode 23
+        versionName "23"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
