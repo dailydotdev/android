@@ -20,8 +20,8 @@
     "path": "/Users/shamun/Projects/daily/android/android.keystore",
     "alias": "android"
   },
-  "appVersionName": "23",
-  "appVersionCode": 23,
+  "appVersionName": "24",
+  "appVersionCode": 24,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://daily.dev/manifest.json",
@@ -34,7 +34,7 @@
   "isChromeOSOnly": false,
   "isMetaQuest": false,
   "minSdkVersion": 19,
-  "orientation": "any",
+  "orientation": "default",
   "fingerprints": [
     {
       "value": "DD:F0:70:20:89:BB:2A:A6:E0:57:9E:02:E2:58:44:12:78:B6:E7:4C:DA:0E:E0:26:C1:0B:41:3A:FE:B4:FA:FF"
@@ -44,5 +44,5 @@
     "https://app.daily.dev"
   ],
   "retainedBundles": [],
-  "appVersion": "23"
+  "appVersion": "24"
 }
